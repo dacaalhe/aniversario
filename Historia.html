@@ -1,0 +1,387 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Nuestra historia ❤️</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #fff0f5, #ffd6e3);
+      color: #5a2638;
+      overflow-x: hidden;
+    }
+
+    /* =========================================
+       CABECERA
+    ========================================= */
+
+    header {
+      text-align: center;
+      padding: 70px 20px 40px;
+    }
+
+    .corazon {
+      font-size: 60px;
+      animation: latir 1.5s infinite;
+      display: inline-block;
+      margin-bottom: 15px;
+    }
+
+    header h1 {
+      color: #d93668;
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    header p {
+      max-width: 600px;
+      margin: auto;
+      line-height: 1.7;
+      font-size: 1.1rem;
+      color: #704052;
+    }
+
+    /* =========================================
+       MENÚ
+    ========================================= */
+
+    .menu {
+      max-width: 1000px;
+      margin: 30px auto 80px;
+      padding: 0 20px;
+
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .tarjeta {
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.8);
+      border: 2px solid #ffd1df;
+      border-radius: 25px;
+      padding: 35px 25px;
+      text-align: center;
+      color: #5a2638;
+
+      box-shadow: 0 8px 25px rgba(180, 60, 100, 0.12);
+
+      transition: 0.35s;
+
+      animation: aparecer 0.8s ease;
+    }
+
+    .tarjeta:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 15px 35px rgba(180, 60, 100, 0.2);
+      background: white;
+    }
+
+    .icono {
+      font-size: 50px;
+      margin-bottom: 15px;
+    }
+
+    .tarjeta h2 {
+      color: #d93668;
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+    }
+
+    .tarjeta p {
+      line-height: 1.5;
+      color: #704052;
+    }
+
+    /* =========================================
+       BOTÓN VOLVER
+    ========================================= */
+
+    .volver {
+      display: block;
+      width: fit-content;
+      margin: 0 auto 60px;
+
+      padding: 14px 30px;
+
+      background: white;
+      color: #d93668;
+
+      text-decoration: none;
+      font-weight: bold;
+
+      border-radius: 50px;
+
+      border: 1px solid #ffd1df;
+
+      box-shadow: 0 5px 15px rgba(180, 60, 100, 0.1);
+
+      transition: 0.3s;
+    }
+
+    .volver:hover {
+      transform: scale(1.05);
+      background: #fff5f8;
+    }
+
+    /* =========================================
+       CORAZONES DECORATIVOS
+    ========================================= */
+
+    .corazon-flotante {
+      position: fixed;
+      bottom: -50px;
+      font-size: 25px;
+      opacity: 0.35;
+      animation: flotar linear infinite;
+      pointer-events: none;
+    }
+
+    .uno {
+      left: 5%;
+      animation-duration: 10s;
+    }
+
+    .dos {
+      left: 20%;
+      animation-duration: 13s;
+      animation-delay: 2s;
+    }
+
+    .tres {
+      left: 75%;
+      animation-duration: 11s;
+      animation-delay: 1s;
+    }
+
+    .cuatro {
+      left: 90%;
+      animation-duration: 14s;
+      animation-delay: 4s;
+    }
+
+    /* =========================================
+       ANIMACIONES
+    ========================================= */
+
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes latir {
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.15);
+      }
+    }
+
+    @keyframes flotar {
+      0% {
+        transform: translateY(0);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 0.35;
+      }
+
+      100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* =========================================
+       MÓVILES
+    ========================================= */
+
+    @media (max-width: 700px) {
+
+      header {
+        padding-top: 50px;
+      }
+
+      header h1 {
+        font-size: 2.3rem;
+      }
+
+      .menu {
+        grid-template-columns: 1fr;
+      }
+
+      .tarjeta {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ❤️ CORAZONES DECORATIVOS -->
+
+  <div class="corazon-flotante uno">❤️</div>
+  <div class="corazon-flotante dos">💕</div>
+  <div class="corazon-flotante tres">💗</div>
+  <div class="corazon-flotante cuatro">❤️</div>
+
+
+  <!-- =========================================
+       CABECERA
+  ========================================= -->
+
+  <header>
+
+    <div class="corazon">
+      ❤️
+    </div>
+
+    <!-- ✏️ PUEDES CAMBIAR ESTE TÍTULO -->
+
+    <h1>Nuestra historia</h1>
+
+    <!-- ✏️ PUEDES CAMBIAR ESTE TEXTO -->
+
+    <p>
+      Un pequeño lugar donde guardamos todos
+      nuestros momentos, recuerdos y todo aquello
+      que hace especial nuestra historia.
+    </p>
+
+  </header>
+
+
+  <!-- =========================================
+       MENÚ PRINCIPAL
+  ========================================= -->
+
+  <main class="menu">
+
+
+    <!-- 💕 NOSOTROS -->
+
+    <a href="nosotros.html" class="tarjeta">
+
+      <div class="icono">
+        💕
+      </div>
+
+      <h2>Nosotros</h2>
+
+      <p>
+        Cómo empezó todo, lo que siento por ti
+        y nuestros recuerdos.
+      </p>
+
+    </a>
+
+
+    <!-- 📸 GALERÍA -->
+
+    <a href="galeria.html" class="tarjeta">
+
+      <div class="icono">
+        📸
+      </div>
+
+      <h2>Galería</h2>
+
+      <p>
+        Una colección de nuestras fotos y
+        momentos juntos.
+      </p>
+
+    </a>
+
+
+    <!-- 🎵 CANCIÓN -->
+
+    <a href="canciones.html" class="tarjeta">
+
+      <div class="icono">
+        🎵
+      </div>
+
+      <h2>Nuestra canción</h2>
+
+      <p>
+        Una canción que representa nuestra
+        historia.
+      </p>
+
+    </a>
+
+
+     <!-- 💌 PARA TI -->
+
+    <a href="para-ti.html" class="tarjeta">
+
+      <div class="icono">
+        💌
+      </div>
+
+      <h2>Para ti</h2>
+
+      <p>
+        Una carta escrita especialmente para ti.
+      </p>
+
+    </a>
+
+
+    <!-- 🎁 SORPRESA -->
+
+    <a href="sorpresa.html" class="tarjeta">
+
+      <div class="icono">
+        🎁
+      </div>
+
+      <h2>Sorpresa</h2>
+
+      <p>
+        Hay algo especial esperándote aquí...
+      </p>
+
+    </a>
+
+  </main>
+
+
+  <!-- =========================================
+       VOLVER AL INICIO
+  ========================================= -->
+
+  <a href="index.html" class="volver">
+    ← Volver al inicio
+  </a>
+
+</body>
+</html>
+```

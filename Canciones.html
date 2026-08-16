@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Nuestras canciones ❤️</title>
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+
+      background:
+        linear-gradient(
+          135deg,
+          #fff0f5,
+          #ffd6e3,
+          #ffeaf1
+        );
+
+      color: #5a2638;
+      overflow-x: hidden;
+    }
+
+
+    /* =========================================
+       CABECERA
+    ========================================= */
+
+    header {
+      text-align: center;
+      padding: 70px 20px 45px;
+    }
+
+    .corazon-principal {
+      font-size: 65px;
+      display: inline-block;
+      animation: latir 1.5s infinite;
+      margin-bottom: 15px;
+    }
+
+    header h1 {
+      color: #d93668;
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    header p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #704052;
+    }
+
+
+    /* =========================================
+       INTRODUCCIÓN
+    ========================================= */
+
+    .intro {
+      max-width: 700px;
+      margin: 0 auto 35px;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .intro-frase {
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid #ffd1df;
+      border-radius: 20px;
+      padding: 22px;
+      color: #704052;
+      line-height: 1.7;
+
+      box-shadow:
+        0 8px 25px
+        rgba(180, 60, 100, 0.10);
+    }
+
+
+    /* =========================================
+       LISTA DE CANCIONES
+    ========================================= */
+
+    .lista-canciones {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+
+    /* =========================================
+       TARJETA
+    ========================================= */
+
+    .cancion {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+
+      background: rgba(255, 255, 255, 0.92);
+
+      border: 1px solid #ffd1df;
+      border-radius: 25px;
+
+      padding: 25px;
+
+      margin-bottom: 22px;
+
+      box-shadow:
+        0 8px 25px
+        rgba(180, 60, 100, 0.12);
+
+      transition: 0.35s;
+
+      animation: aparecer 0.7s ease;
+    }
+
+    .cancion:hover {
+      transform: translateY(-5px);
+
+      box-shadow:
+        0 15px 35px
+        rgba(180, 60, 100, 0.20);
+    }
+
+
+    /* =========================================
+       NÚMERO
+    ========================================= */
+
+    .numero {
+      min-width: 65px;
+      height: 65px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 50%;
+
+      background:
+        linear-gradient(
+          135deg,
+          #ffb6c9,
+          #ff6f9f
+        );
+
+      color: white;
+
+      font-size: 1.3rem;
+      font-weight: bold;
+
+      box-shadow:
+        0 5px 15px
+        rgba(217, 54, 104, 0.20);
+    }
+
+
+    /* =========================================
+       INFORMACIÓN
+    ========================================= */
+
+    .informacion {
+      flex: 1;
+    }
+
+    .informacion h2 {
+      color: #b92d58;
+      font-size: 1.45rem;
+      margin-bottom: 7px;
+    }
+
+    .artista {
+      color: #704052;
+      margin-bottom: 15px;
+      font-size: 0.95rem;
+    }
+
+
+    /* =========================================
+       REPRODUCTOR
+    ========================================= */
+
+    audio {
+      width: 100%;
+      height: 40px;
+    }
+
+
+    /* =========================================
+       SEPARADOR
+    ========================================= */
+
+    .separador {
+      text-align: center;
+      margin: 60px 0 45px;
+      color: #d93668;
+    }
+
+    .separador span {
+      display: inline-block;
+      padding: 12px 25px;
+
+      background: white;
+
+      border: 1px solid #ffd1df;
+      border-radius: 50px;
+
+      font-weight: bold;
+
+      box-shadow:
+        0 5px 15px
+        rgba(180, 60, 100, 0.10);
+    }
+
+
+    /* =========================================
+       MIL VIDAS
+    ========================================= */
+
+    .mil-vidas {
+      position: relative;
+
+      max-width: 900px;
+      margin: 0 auto 70px;
+      padding: 55px 35px;
+
+      text-align: center;
+
+      color: white;
+
+      background:
+        linear-gradient(
+          135deg,
+          #d93668,
+          #ff6f9f,
+          #e84375
+        );
+
+      border-radius: 35px;
+
+      overflow: hidden;
+
+      box-shadow:
+        0 20px 50px
+        rgba(180, 60, 100, 0.30);
+
+      animation: aparecerEspecial 1.2s ease;
+    }
+
+
+    /* CORAZONES DECORATIVOS */
+
+    .mil-vidas::before {
+      content: "❤️";
+      position: absolute;
+
+      font-size: 150px;
+
+      opacity: 0.10;
+
+      top: -45px;
+      left: -30px;
+
+      transform: rotate(-20deg);
+    }
+
+    .mil-vidas::after {
+      content: "❤️";
+      position: absolute;
+
+      font-size: 150px;
+
+      opacity: 0.10;
+
+      bottom: -55px;
+      right: -30px;
+
+      transform: rotate(20deg);
+    }
+
+
+    .especial-corazon {
+      position: relative;
+      z-index: 2;
+
+      font-size: 70px;
+
+      display: inline-block;
+
+      animation: latir 1.5s infinite;
+
+      margin-bottom: 15px;
+    }
+
+
+    .mil-vidas .numero-especial {
+      position: relative;
+      z-index: 2;
+
+      font-size: 0.9rem;
+      letter-spacing: 3px;
+
+      margin-bottom: 12px;
+    }
+
+
+    .mil-vidas h2 {
+      position: relative;
+      z-index: 2;
+
+      font-size: 3rem;
+
+      margin-bottom: 8px;
+    }
+
+
+    .mil-vidas .artista {
+      position: relative;
+      z-index: 2;
+
+      color: white;
+      opacity: 0.9;
+
+      margin-bottom: 25px;
+    }
+
+
+    .mensaje-especial {
+      position: relative;
+      z-index: 2;
+
+      max-width: 650px;
+
+      margin: 0 auto 30px;
+
+      line-height: 1.8;
+
+      font-size: 1.1rem;
+    }
+
+
+    .mil-vidas audio {
+      position: relative;
+      z-index: 2;
+    }
+
+
+    /* =========================================
+       BOTÓN VOLVER
+    ========================================= */
+
+    .volver {
+      display: block;
+
+      width: fit-content;
+
+      margin: 0 auto 70px;
+
+      padding: 15px 32px;
+
+      background: white;
+
+      color: #d93668;
+
+      text-decoration: none;
+
+      border-radius: 50px;
+
+      font-weight: bold;
+
+      border: 1px solid #ffd1df;
+
+      box-shadow:
+        0 5px 20px
+        rgba(180, 60, 100, 0.12);
+
+      transition: 0.3s;
+    }
+
+    .volver:hover {
+      transform: scale(1.05);
+      background: #fff5f8;
+    }
+
+
+    /* =========================================
+       ANIMACIONES
+    ========================================= */
+
+    @keyframes latir {
+
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.15);
+      }
+
+    }
+
+
+    @keyframes aparecer {
+
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+    }
+
+
+    @keyframes aparecerEspecial {
+
+      from {
+        opacity: 0;
+        transform: translateY(60px) scale(0.94);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+
+    }
+
+
+    /* =========================================
+       MÓVIL
+    ========================================= */
+
+    @media (max-width: 650px) {
+
+      header {
+        padding-top: 50px;
+      }
+
+      header h1 {
+        font-size: 2.3rem;
+      }
+
+      .lista-canciones {
+        padding: 15px;
+      }
+
+      .cancion {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+      }
+
+      .numero {
+        min-width: 55px;
+        height: 55px;
+      }
+
+      .informacion {
+        width: 100%;
+      }
+
+      .mil-vidas {
+        margin-left: 15px;
+        margin-right: 15px;
+        padding: 45px 20px;
+      }
+
+      .mil-vidas h2 {
+        font-size: 2.3rem;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =========================================
+       CABECERA
+  ========================================= -->
+
+  <header>
+
+    <div class="corazon-principal">
+      🎵
+    </div>
+
+    <h1>
+      Nuestras canciones
+    </h1>
+
+    <p>
+
+      Algunas canciones simplemente nos gustan.
+
+      <br>
+
+      Otras terminan formando parte de nosotros.
+
+      <br><br>
+
+      Estas son las canciones que forman parte
+      de nuestra historia. ❤️
+
+    </p>
+
+  </header>
+
+
+  <!-- =========================================
+       INTRODUCCIÓN
+  ========================================= -->
+
+  <section class="intro">
+
+    <div class="intro-frase">
+
+      Pulsa en una canción para escucharla.
+
+      <br>
+
+      Y recuerda...
+
+      <br><br>
+
+      <strong>
+        solo una puede sonar a la vez. ❤️
+      </strong>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       CANCIONES 1 - 6
+  ========================================= -->
+
+  <main class="lista-canciones">
+
+
+    <!-- 1 -->
+
+    <section class="cancion">
+
+      <div class="numero">
+        1
+      </div>
+
+      <div class="informacion">
+
+        <h2>
+          Asturiana
+        </h2>
+
+        <div class="artista">
+          Hard GZ
+        </div>
+
+        <audio controls>
+
+          <source
+            src="canciones/cancion1.mp3"
+            type="audio/mpeg"
+          >
+
+          Tu navegador no puede reproducir este audio.
+
+        </audio>
+
+      </div>
+
+    </section>
+
+
+    <!-- 2 -->
+
+    <section class="cancion">
+
+      <div class="numero">
+        2
+      </div>
+
+      <div class="informacion">
+
+        <h2>
+          Al Golpito
+        </h2>
+
+        <div class="artista">
+          Quevedo
+        </div>
+
+        <audio controls>
+
+          <source
+            src="canciones/cancion2.mp3"
+            type="audio/mpeg"
+          >
+
+          Tu navegador no puede reproducir este audio.
+
+        </audio>
+
+      </div>
+
+    </section>
+
+
+    <!-- 3 -->
+
+    <section class="cancion">
+
+      <div class="numero">
+        3
+      </div>
+
+      <div class="informacion">
+
+        <h2>
+          La Suerte de Mi Vida
+        </h2>
+
+        <div class="artista">
+          El Canto del Loco
+        </div>
+
+        <audio controls>
+
+          <source
+            src="canciones/cancion3.mp3"
+            type="audio/mpeg"
+          >
+
+          Tu navegador no puede reproducir este audio.
+
+        </audio>
+
+      </div>
+
+    </section>
+
+
+    <!-- 4 -->
+
+    <section class="cancion">
+
+      <div class="numero">
+        4
+      </div>
+
+      <div class="informacion">
+
+        <h2>
+          Como Panas
+        </h2>
+
+        <div class="artista">
+          Bryant Myers
+        </div>
+
+        <audio controls>
+
+          <source
+            src="canciones/cancion4.mp3"
+            type="audio/mpeg"
+          >
+
+          Tu navegador no puede reproducir este audio.
+
+        </audio>
+
+      </div>
+
+    </section>
+
+
+    <!-- 5 -->
+
+    <section class="cancion">
+
+      <div class="numero">
+        5
+      </div>
+
+      <div class="informacion">
+
+        <h2>
+          Batmóvil Remix
+        </h2>
+
+        <div class="artista">
+          Hens
+        </div>
+
+        <audio controls>
+
+          <source
+            src="canciones/cancion5.mp3"
+            type="audio/mpeg"
+          >
+
+          Tu navegador no puede reproducir este audio.
+
+        </audio>
+
+      </div>
+
+    </section>
+
+
+    <!-- 6 -->
+
+    <section class="cancion">
+
+      <div class="numero">
+        6
+      </div>
+
+      <div class="informacion">
+
+        <h2>
+          Si Supieran
+        </h2>
+
+        <div class="artista">
+          Serko
+        </div>
+
+        <audio controls>
+
+          <source
+            src="canciones/cancion6.mp3"
+            type="audio/mpeg"
+          >
+
+          Tu navegador no puede reproducir este audio.
+
+        </audio>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <!-- =========================================
+       SEPARADOR
+  ========================================= -->
+
+  <div class="separador">
+
+    <span>
+      ❤️ Y ahora... la más importante ❤️
+    </span>
+
+  </div>
+
+
+  <!-- =========================================
+       MIL VIDAS
+  ========================================= -->
+
+  <section class="mil-vidas">
+
+    <div class="especial-corazon">
+      ❤️
+    </div>
+
+    <div class="numero-especial">
+      LA CANCIÓN MÁS IMPORTANTE
+    </div>
+
+    <h2>
+      Mil Vidas
+    </h2>
+
+    <div class="artista">
+      Mora
+    </div>
+
+    <p class="mensaje-especial">
+
+      De todas las canciones que forman parte
+      de nuestra historia, hay una que está
+      por encima de todas.
+
+      <br><br>
+
+      Una canción que quiero que siempre
+      esté relacionada contigo.
+
+      <br><br>
+
+      <strong>
+        Porque si tuviera mil vidas,
+        en todas volvería a elegirte. ❤️
+      </strong>
+
+    </p>
+
+    <audio controls>
+
+      <source
+        src="canciones/mil-vidas.mp3"
+        type="audio/mpeg"
+      >
+
+      Tu navegador no puede reproducir este audio.
+
+    </audio>
+
+  </section>
+
+
+  <!-- =========================================
+       VOLVER
+  ========================================= -->
+
+  <a
+    href="historia.html"
+    class="volver"
+  >
+
+    ← Volver a nuestra historia
+
+  </a>
+
+
+  <!-- =========================================
+       JAVASCRIPT
+       UNA SOLA CANCIÓN A LA VEZ
+  ========================================= -->
+
+  <script>
+
+    const audios =
+      document.querySelectorAll("audio");
+
+
+    audios.forEach(audio => {
+
+      audio.addEventListener("play", function() {
+
+        audios.forEach(otro => {
+
+          if (otro !== audio) {
+
+            otro.pause();
+
+          }
+
+        });
+
+      });
+
+    });
+
+  </script>
+
+
+</body>
+
+</html>

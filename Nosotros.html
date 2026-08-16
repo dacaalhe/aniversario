@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Nosotros ❤️</title>
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(180deg, #fff0f5, #ffe1eb);
+      color: #5a2638;
+      overflow-x: hidden;
+    }
+
+    /* CABECERA */
+
+    header {
+      text-align: center;
+      padding: 70px 20px 50px;
+    }
+
+    .corazon-principal {
+      font-size: 65px;
+      display: inline-block;
+      animation: latir 1.5s infinite;
+      margin-bottom: 15px;
+    }
+
+    header h1 {
+      color: #d93668;
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    header p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #704052;
+    }
+
+    /* LÍNEA TEMPORAL */
+
+    .timeline {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(
+        #ff9ebb,
+        #d93668,
+        #ff9ebb
+      );
+      transform: translateX(-50%);
+      border-radius: 10px;
+    }
+
+    /* EVENTOS */
+
+    .evento {
+      position: relative;
+      width: 50%;
+      padding: 20px 40px;
+      margin-bottom: 35px;
+    }
+
+    .evento.izquierda {
+      left: 0;
+      text-align: right;
+    }
+
+    .evento.derecha {
+      left: 50%;
+      text-align: left;
+    }
+
+    .punto {
+      position: absolute;
+      top: 30px;
+      width: 22px;
+      height: 22px;
+      background: white;
+      border: 5px solid #d93668;
+      border-radius: 50%;
+      z-index: 2;
+    }
+
+    .izquierda .punto {
+      right: -11px;
+    }
+
+    .derecha .punto {
+      left: -11px;
+    }
+
+    /* TARJETAS */
+
+    .tarjeta-evento {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid #ffd1df;
+      border-radius: 22px;
+      padding: 28px;
+
+      box-shadow:
+        0 8px 25px rgba(180, 60, 100, 0.12);
+
+      transition: 0.3s;
+    }
+
+    .tarjeta-evento:hover {
+      transform: translateY(-5px);
+
+      box-shadow:
+        0 15px 30px rgba(180, 60, 100, 0.18);
+    }
+
+    .fecha {
+      color: #d93668;
+      font-weight: bold;
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+
+    .tarjeta-evento h2 {
+      color: #b92d58;
+      margin-bottom: 15px;
+      font-size: 1.4rem;
+    }
+
+    .tarjeta-evento p {
+      line-height: 1.8;
+      color: #704052;
+      white-space: normal;
+    }
+
+    /* FINAL */
+
+    .final {
+      text-align: center;
+      max-width: 750px;
+      margin: 80px auto;
+      padding: 50px 30px;
+    }
+
+    .final .corazon {
+      font-size: 60px;
+      animation: latir 1.5s infinite;
+      margin-bottom: 20px;
+    }
+
+    .final h2 {
+      color: #d93668;
+      font-size: 2.3rem;
+      margin-bottom: 20px;
+    }
+
+    .final p {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: #704052;
+    }
+
+    /* VOLVER */
+
+    .volver {
+      display: block;
+      width: fit-content;
+      margin: 0 auto 70px;
+
+      padding: 15px 32px;
+
+      background: white;
+      color: #d93668;
+
+      text-decoration: none;
+
+      border-radius: 50px;
+
+      font-weight: bold;
+
+      border: 1px solid #ffd1df;
+
+      box-shadow: 0 5px 20px rgba(180, 60, 100, 0.12);
+
+      transition: 0.3s;
+    }
+
+    .volver:hover {
+      transform: scale(1.05);
+      background: #fff5f8;
+    }
+
+    /* ANIMACIÓN */
+
+    @keyframes latir {
+
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.15);
+      }
+
+    }
+
+    /* MÓVIL */
+
+    @media (max-width: 700px) {
+
+      header {
+        padding-top: 50px;
+      }
+
+      header h1 {
+        font-size: 2.3rem;
+      }
+
+      .timeline::before {
+        left: 20px;
+      }
+
+      .evento,
+      .evento.izquierda,
+      .evento.derecha {
+        width: 100%;
+        left: 0;
+        text-align: left;
+        padding-left: 55px;
+        padding-right: 10px;
+      }
+
+      .izquierda .punto,
+      .derecha .punto {
+        left: 9px;
+        right: auto;
+      }
+
+      .tarjeta-evento {
+        padding: 22px;
+      }
+
+      .final {
+        padding: 30px 20px;
+      }
+
+      .final h2 {
+        font-size: 1.9rem;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+
+  <!-- CABECERA -->
+
+  <header>
+
+    <div class="corazon-principal">
+      ❤️
+    </div>
+
+    <h1>Nosotros</h1>
+
+    <p>
+      Porque antes de ser un aniversario,
+      fuimos dos personas que poco a poco
+      fueron encontrando su lugar la una en la otra.
+    </p>
+
+  </header>
+
+
+  <!-- LÍNEA TEMPORAL -->
+
+  <main class="timeline">
+
+
+    <!-- =====================================
+         1. CÓMO EMPEZÓ TODO
+    ====================================== -->
+
+    <section class="evento izquierda">
+
+      <div class="punto"></div>
+
+      <div class="tarjeta-evento">
+
+        <div class="fecha">
+          ❤️ Cómo empezó todo
+        </div>
+
+        <h2>
+          El principio de nuestra historia
+        </h2>
+
+        <p>
+          Pues como ya sabes todo empezó con aquel hablar por fotos que subimos a la vez, tu pensabas que yo era una persona muy diferente a la que soy y que al ser un chico de 4º de la ESO que no te iba a hacer caso o que me iba a reír de ti, y que me dejabas de hablar porque no querías nada serio conmigo y tenías también a otro chico que te gustaba.
+
+          Pero pudiste ver que no era así, que yo era una persona amable, simpática, detallista, de buen corazón y que me preocupaba mucho por los demás, (o yo creo a mí parecer), y poco a poco que pasaban los días e íbamos hablando cada vez más te ibas dando cuenta de la persona que en verdad era, sobre todo cuando me contaste lo que te paso con Lucas y lo que te estaba pasando con Gabriel que yo me quede despierto de noche para escucharte, aconsejarte y ayudarte con todo lo que podía incluso intentando sacarte una sonrisa.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         2. 1 DE SEPTIEMBRE
+    ====================================== -->
+
+    <section class="evento derecha">
+
+      <div class="punto"></div>
+
+      <div class="tarjeta-evento">
+
+        <div class="fecha">
+          📅 1 de septiembre de 2025
+        </div>
+
+        <h2>
+          Nuestro primer encuentro
+        </h2>
+
+        <p>
+          Como tampoco voy a olvidar ese 1 de Septiembre que me habías dicho de quedar la noche pasada y yo te había dicho que depende de como llegara de cansado de entrenar.
+
+          Cuando llegue no sabía que hacer porque estabais tu, Sara, Candela y Hugo, (que menos mal que estuvo porque sino no sabría donde meterme), y que cuando me tenía que ir que le dije que me lanzara tu bolso y vosotras pensabais que lo hacía para que fueras a por mí.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         3. 3-4 DE SEPTIEMBRE
+    ====================================== -->
+
+    <section class="evento izquierda">
+
+      <div class="punto"></div>
+
+      <div class="tarjeta-evento">
+
+        <div class="fecha">
+          📅 3 → 4 de septiembre de 2025
+        </div>
+
+        <h2>
+          Nuestra primera llamada
+        </h2>
+
+        <p>
+          Y hubo un día que nunca me voy a olvidar de el que fue del 3 de Septiembre para el 4 que hicimos llamada por primera vez porque me preguntaste que si quería jugar contigo al Roblox y yo te dije que sí, pero te dije que como íbamos a hablar y tu me dijiste de hacer llamada, y eso a mí aunque no te lo creas me alegro muchísimo porque empecé a tener esperanzas de que podíamos llegar a tener algo.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         4. EL CHOCOLATE
+    ====================================== -->
+
+    <section class="evento derecha">
+
+      <div class="punto"></div>
+
+      <div class="tarjeta-evento">
+
+        <div class="fecha">
+          🍫 Después de aquella primera llamada
+        </div>
+
+        <h2>
+          Quería ser el primero
+        </h2>
+
+        <p>
+          El día siguiente a esa primera llamada algo había cambiado me habías dicho que si te acompañaba a la parada de bus para ir a entrenar y yo te había comprado chocolate porque me dijiste que nunca nadie antes te la había comprado y yo quería ser el primero que lo hiciera.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         5. ESA NOCHE
+    ====================================== -->
+
+    <section class="evento izquierda">
+
+      <div class="punto"></div>
+
+      <div class="tarjeta-evento">
+
+        <div class="fecha">
+          🌙 Una noche que lo cambió todo
+        </div>
+
+        <h2>
+          Algo pasó
+        </h2>
+
+        <p>
+          Y ese mismo día de noche volvimos a hacer llamada y algo paso que hizo que todo lo que estamos viviendo ahora pasara, y fue esa pregunta que me hiciste que yo empecé a saltar de alegría porque no me lo creía, también habíamos hablado de quedar pero por cosas que tenías que hacer hasta el día 8 no pudimos, y además tuvimos que ir con candela porque te daba vergüenza y miedo por si no aparecía o te dejaba sola.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         6. 8 DE SEPTIEMBRE
+    ====================================== -->
+
+    <section class="evento derecha">
+
+      <div class="punto"></div>
+
+      <div class="tarjeta-evento">
+
+        <div class="fecha">
+          💋 8 de septiembre de 2025
+        </div>
+
+        <h2>
+          Nuestro primer beso
+        </h2>
+
+        <p>
+          Ese día fue el día de nuestro primer beso.
+
+          Luego tu empezaste a clase e iba a por ti después de clase para acompañarte a casa, y nos íbamos a donde la plaza de casa de Sara para estar juntos un rato.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         7. 10 DE SEPTIEMBRE
+    ====================================== -->
+
+    <section class="evento izquierda">
+
+      <div class="punto"></div>
+
+      <div class="tarjeta-evento">
+
+        <div class="fecha">
+          💌 10 de septiembre de 2025
+        </div>
+
+        <h2>
+          La carta
+        </h2>
+
+        <p>
+          Y a mí el día 10 de Septiembre me dio por hacerte la carta por la cual nosotros estamos ahora como estamos, me acuerdo perfectamente que me dijiste "si tu me haces una carta a mí yo también te voy a hacer una a ti" porque no te parecía justo que yo te la hiciera y tu a mi no.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         8. 11 DE SEPTIEMBRE
+    ====================================== -->
+
+    <section class="evento derecha">
+
+      <div class="punto"></div>
+
+      <div class="tarjeta-evento">
+
+        <div class="fecha">
+          ❤️ 11 de septiembre de 2025
+        </div>
+
+        <h2>
+          El comienzo de nosotros
+        </h2>
+
+        <p>
+          Y el día 11 de Septiembre de 2025 con una tableta de chocolate, un ramo de flores, un peluche y una carta te pedí que fueras mi novia y ya el resto es historia.
+        </p>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <!-- FINAL -->
+
+  <section class="final">
+
+    <div class="corazon">
+      ❤️
+    </div>
+
+    <h2>
+      Y ya el resto es historia...
+    </h2>
+
+    <p>
+      Pero esta historia no termina aquí.
+
+      <br><br>
+
+      Esto es solamente el principio de todos
+      los momentos que todavía nos quedan por vivir.
+
+      <br><br>
+
+      <strong>
+        Te quiero, Adriana. ❤️
+      </strong>
+
+    </p>
+
+  </section>
+
+
+  <!-- VOLVER -->
+
+  <a href="historia.html" class="volver">
+    ← Volver a nuestra historia
+  </a>
+
+
+</body>
+</html>
