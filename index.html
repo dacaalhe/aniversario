@@ -1,14 +1,565 @@
+<<<<<<< HEAD
 <!doctype html>
+=======
+<!DOCTYPE html>
+>>>>>>> 16d071a3b4d05702b28879e786d6d2c1e681320a
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#d93668">
   <title>Nuestro primer año</title>
   <style>
+<<<<<<< HEAD
     *{box-sizing:border-box}html,body{width:100%;height:100%;margin:0}body{font-family:Arial,sans-serif;background:#fff0f5}.hidden{display:none!important}.access{position:fixed;inset:0;z-index:10;display:grid;place-items:center;padding:20px;overflow:hidden;background:linear-gradient(135deg,#ffb6c9,#ff6f9f,#ff9ebc)}.access:before,.access:after{content:'❤';position:absolute;bottom:-55px;color:#fff;opacity:.65;animation:float 11s linear infinite}.access:before{left:8%;font-size:38px}.access:after{left:83%;font-size:55px;animation-delay:4s}.login{position:relative;z-index:1;width:min(430px,100%);padding:45px 35px;text-align:center;color:#fff;background:rgba(255,255,255,.25);border:2px solid rgba(255,255,255,.5);border-radius:30px;box-shadow:0 10px 40px rgba(0,0,0,.15);backdrop-filter:blur(10px)}.login .heart{font-size:55px;animation:pulse 1.5s infinite}.login h1{margin:12px 0;font-size:2.35rem}.login p{line-height:1.6;margin:0 0 25px}.login input{display:block;width:100%;padding:15px;margin:10px 0;border:0;border-radius:12px;color:#5a2638;font-size:1rem}.login button{width:100%;margin-top:10px;padding:15px;border:0;border-radius:50px;background:#fff;color:#e84375;font-size:1rem;font-weight:bold;cursor:pointer;box-shadow:0 5px 20px rgba(0,0,0,.15)}.error{min-height:20px;margin:12px 0 0;color:#fff4bc;font-weight:bold;font-size:.88rem}iframe{display:block;width:100%;height:100%;border:0}@keyframes float{0%{transform:translateY(0);opacity:0}10%{opacity:.7}100%{transform:translateY(-110vh) rotate(360deg);opacity:0}}@keyframes pulse{50%{transform:scale(1.15)}}
+=======
+
+    /* =========================================
+       CONFIGURACIÓN GENERAL
+    ========================================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff0f5;
+      color: #5a2638;
+    }
+
+
+    /* =========================================
+       PANTALLA DE LOGIN
+    ========================================= */
+
+    #login {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background: linear-gradient(
+        135deg,
+        #ffb6c9,
+        #ff6f9f,
+        #ff9ebc
+      );
+
+      padding: 20px;
+    }
+
+    .login-box {
+      width: 100%;
+      max-width: 400px;
+
+      background: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(15px);
+
+      padding: 40px 30px;
+      border-radius: 30px;
+
+      text-align: center;
+
+      border: 2px solid rgba(255, 255, 255, 0.5);
+
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+
+      animation: aparecer 1s ease;
+    }
+
+    .login-heart {
+      font-size: 60px;
+      animation: latir 1.5s infinite;
+      margin-bottom: 10px;
+    }
+
+    .login-box h2 {
+      color: white;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .login-box p {
+      color: white;
+      margin-bottom: 25px;
+    }
+
+    .login-box input {
+      width: 100%;
+
+      padding: 15px;
+      margin: 8px 0;
+
+      border: none;
+      border-radius: 15px;
+
+      font-size: 1rem;
+
+      outline: none;
+    }
+
+    .login-box button {
+      margin-top: 15px;
+
+      padding: 15px 35px;
+
+      border: none;
+      border-radius: 50px;
+
+      background: white;
+      color: #e84375;
+
+      font-size: 1.1rem;
+      font-weight: bold;
+
+      cursor: pointer;
+
+      transition: 0.3s;
+    }
+
+    .login-box button:hover {
+      transform: scale(1.08);
+
+      box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    #error {
+      display: none;
+
+      color: white;
+
+      margin-top: 15px;
+      margin-bottom: 0;
+
+      font-weight: bold;
+    }
+
+
+    /* =========================================
+       INICIO
+    ========================================= */
+
+    .inicio {
+      min-height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      text-align: center;
+
+      position: relative;
+
+      padding: 20px;
+
+      overflow: hidden;
+
+      background: linear-gradient(
+        135deg,
+        #ffb6c9,
+        #ff6f9f,
+        #ff9ebc
+      );
+    }
+
+    .contenido {
+      position: relative;
+
+      z-index: 2;
+
+      background: rgba(255, 255, 255, 0.25);
+
+      backdrop-filter: blur(10px);
+
+      padding: 50px 35px;
+
+      border-radius: 30px;
+
+      border: 2px solid rgba(255, 255, 255, 0.5);
+
+      box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.15);
+
+      max-width: 600px;
+
+      animation: aparecer 1.5s ease;
+    }
+
+    .corazon-principal {
+      font-size: 65px;
+
+      animation: latir 1.5s infinite;
+
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      color: white;
+
+      font-size: 3rem;
+
+      margin-bottom: 15px;
+
+      text-shadow:
+        2px 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .nombres {
+      color: white;
+
+      font-size: 1.5rem;
+
+      margin-bottom: 20px;
+
+      font-weight: bold;
+    }
+
+    .frase {
+      color: white;
+
+      font-size: 1.1rem;
+
+      line-height: 1.6;
+
+      margin-bottom: 35px;
+    }
+
+    .boton-entrar {
+      display: inline-block;
+
+      padding: 16px 35px;
+
+      background: white;
+
+      color: #e84375;
+
+      text-decoration: none;
+
+      border-radius: 50px;
+
+      font-size: 1.1rem;
+
+      font-weight: bold;
+
+      transition: 0.3s;
+
+      box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .boton-entrar:hover {
+      transform: scale(1.08);
+
+      box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.2);
+    }
+
+
+    /* =========================================
+       CORAZONES FLOTANTES
+    ========================================= */
+
+    .corazon {
+      position: absolute;
+
+      bottom: -50px;
+
+      color: white;
+
+      opacity: 0.7;
+
+      animation: flotar linear infinite;
+
+      z-index: 1;
+    }
+
+    .corazon:nth-child(1) {
+      left: 5%;
+
+      font-size: 30px;
+
+      animation-duration: 8s;
+    }
+
+    .corazon:nth-child(2) {
+      left: 15%;
+
+      font-size: 50px;
+
+      animation-duration: 12s;
+
+      animation-delay: 2s;
+    }
+
+    .corazon:nth-child(3) {
+      left: 30%;
+
+      font-size: 25px;
+
+      animation-duration: 10s;
+
+      animation-delay: 1s;
+    }
+
+    .corazon:nth-child(4) {
+      left: 45%;
+
+      font-size: 45px;
+
+      animation-duration: 14s;
+
+      animation-delay: 4s;
+    }
+
+    .corazon:nth-child(5) {
+      left: 60%;
+
+      font-size: 35px;
+
+      animation-duration: 9s;
+
+      animation-delay: 2s;
+    }
+
+    .corazon:nth-child(6) {
+      left: 75%;
+
+      font-size: 55px;
+
+      animation-duration: 13s;
+
+      animation-delay: 3s;
+    }
+
+    .corazon:nth-child(7) {
+      left: 90%;
+
+      font-size: 30px;
+
+      animation-duration: 11s;
+
+      animation-delay: 1s;
+    }
+
+
+    /* =========================================
+       SECCIÓN NOSOTROS
+    ========================================= */
+
+    #nosotros {
+      min-height: 100vh;
+
+      padding: 90px 20px;
+
+      text-align: center;
+
+      background: linear-gradient(
+        180deg,
+        #fff0f5,
+        #ffe0ea
+      );
+    }
+
+    .titulo-seccion {
+      color: #d93668;
+
+      font-size: 2.7rem;
+
+      margin-bottom: 15px;
+    }
+
+    .subtitulo {
+      max-width: 650px;
+
+      margin: 0 auto 45px;
+
+      line-height: 1.7;
+
+      font-size: 1.1rem;
+
+      color: #704052;
+    }
+
+
+    /* =========================================
+       MENÚ DE NOSOTROS
+    ========================================= */
+
+    .menu-nosotros {
+      max-width: 700px;
+
+      margin: auto;
+    }
+
+    .opcion {
+      background: white;
+
+      margin: 15px 0;
+
+      border-radius: 18px;
+
+      overflow: hidden;
+
+      box-shadow:
+        0 5px 20px rgba(180, 60, 100, 0.12);
+
+      border: 1px solid #ffd1df;
+    }
+
+    .boton-opcion {
+      width: 100%;
+
+      border: none;
+
+      background: white;
+
+      color: #d93668;
+
+      padding: 22px;
+
+      font-size: 1.15rem;
+
+      font-weight: bold;
+
+      cursor: pointer;
+
+      text-align: left;
+
+      transition: 0.3s;
+    }
+
+    .boton-opcion:hover {
+      background: #fff3f7;
+    }
+
+    .contenido-opcion {
+      display: none;
+
+      padding: 0 25px 25px;
+
+      text-align: left;
+
+      line-height: 1.7;
+
+      color: #704052;
+    }
+
+    .contenido-opcion.activo {
+      display: block;
+
+      animation: aparecer 0.4s ease;
+    }
+
+
+    /* =========================================
+       ANIMACIONES
+    ========================================= */
+
+    @keyframes flotar {
+
+      0% {
+        transform:
+          translateY(0)
+          rotate(0deg);
+
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 0.7;
+      }
+
+      100% {
+        transform:
+          translateY(-110vh)
+          rotate(360deg);
+
+        opacity: 0;
+      }
+    }
+
+    @keyframes latir {
+
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.15);
+      }
+    }
+
+    @keyframes aparecer {
+
+      from {
+        opacity: 0;
+
+        transform:
+          translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+
+        transform:
+          translateY(0);
+      }
+    }
+
+
+    /* =========================================
+       MÓVILES
+    ========================================= */
+
+    @media (max-width: 600px) {
+
+      .contenido {
+        padding: 40px 25px;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      .nombres {
+        font-size: 1.2rem;
+      }
+
+      .frase {
+        font-size: 1rem;
+      }
+
+      .titulo-seccion {
+        font-size: 2.2rem;
+      }
+
+      .login-box {
+        padding: 35px 25px;
+      }
+
+    }
+
+>>>>>>> 16d071a3b4d05702b28879e786d6d2c1e681320a
   </style>
+
 </head>
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 16d071a3b4d05702b28879e786d6d2c1e681320a
 <body>
   <section class="access" id="access"><form class="login" id="login"><div class="heart">❤</div><h1>Nuestro rincón</h1><p>Este regalo es solo para nosotros.</p><input id="user" placeholder="Usuario" autocomplete="username" required><input id="pass" type="password" placeholder="Contraseña" autocomplete="current-password" required><button type="submit">Entrar en nuestra historia ❤</button><div class="error" id="error" aria-live="polite"></div></form></section>
   <iframe id="page" class="hidden" title="Nuestro primer año"></iframe>
@@ -16,10 +567,176 @@
     // CONFIGURACIÓN DE ACCESO: cambia estos dos valores cuando quieras.
     const ACCESS = { username: 'Adriana', password: 'Parque Nuevo' };
 
+<<<<<<< HEAD
     // CARTA PERSONAL: edita solo el texto entre las comillas invertidas.
     const LETTER = {
       heading: 'Para ti, Adriana ❤️',
       message: `ESCRIBE AQUÍ TU CARTA.
+=======
+
+  <!-- =========================================
+       PANTALLA DE LOGIN
+  ========================================= -->
+
+  <div id="login">
+
+    <div class="login-box">
+
+      <div class="login-heart">
+        ❤️
+      </div>
+
+      <h2>
+        Nuestra historia
+      </h2>
+
+      <p>
+        Solo para nosotros dos 💕
+      </p>
+
+      <input
+        type="text"
+        id="usuario"
+        placeholder="Usuario"
+        autocomplete="username"
+      >
+
+      <input
+        type="password"
+        id="contrasena"
+        placeholder="Contraseña"
+        autocomplete="current-password"
+      >
+
+      <button onclick="entrar()">
+        Entrar ❤️
+      </button>
+
+      <p id="error">
+        Usuario o contraseña incorrectos ❤️
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================================
+       CORAZONES
+  ========================================= -->
+
+  <div class="corazon">❤️</div>
+  <div class="corazon">💕</div>
+  <div class="corazon">❤️</div>
+  <div class="corazon">💗</div>
+  <div class="corazon">💕</div>
+  <div class="corazon">❤️</div>
+  <div class="corazon">💖</div>
+
+
+  <!-- =========================================
+       INICIO
+  ========================================= -->
+
+  <section class="inicio">
+
+    <div class="contenido">
+
+      <div class="corazon-principal">
+        ❤️
+      </div>
+
+      <h1>
+        Nuestro primer año
+      </h1>
+
+      <p class="nombres">
+        David ❤️ Adriana
+      </p>
+
+      <p class="frase">
+        Hay historias que merecen ser contadas...
+        y la nuestra es una de mis favoritas.
+        ❤️
+      </p>
+
+      <a
+        href="historia.html"
+        class="boton-entrar"
+      >
+        Entrar en nuestra historia ❤️
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       JAVASCRIPT DEL LOGIN
+  ========================================= -->
+
+  <script>
+
+    function entrar() {
+
+      const usuario =
+        document.getElementById("usuario").value;
+
+      const contrasena =
+        document.getElementById("contrasena").value;
+
+      const error =
+        document.getElementById("error");
+
+
+      // =========================================
+      // DATOS DEL LOGIN
+      // =========================================
+
+      const usuarioCorrecto = "David";
+
+      const contrasenaCorrecta = "Adriana";
+
+
+      // =========================================
+      // COMPROBAR DATOS
+      // =========================================
+
+      if (
+        usuario === usuarioCorrecto &&
+        contrasena === contrasenaCorrecta
+      ) {
+
+        document.getElementById("login").style.display =
+          "none";
+
+      } else {
+
+        error.style.display =
+          "block";
+
+      }
+
+    }
+
+
+    // =========================================
+    // ENTER PARA INICIAR SESIÓN
+    // =========================================
+
+    document
+      .getElementById("contrasena")
+      .addEventListener("keydown", function(event) {
+
+        if (event.key === "Enter") {
+
+          entrar();
+
+        }
+
+      });
+>>>>>>> 16d071a3b4d05702b28879e786d6d2c1e681320a
 
 Puedes añadir todos los párrafos que quieras.
 Cada salto de línea se verá en la carta.`,
@@ -53,5 +770,11 @@ David`
     });
     window.addEventListener('message', event => { if (event.data && event.data.type === 'anniversary-navigation') loadPage(event.data.page); });
   </script>
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 16d071a3b4d05702b28879e786d6d2c1e681320a
 </body>
+
 </html>
