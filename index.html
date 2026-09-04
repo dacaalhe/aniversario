@@ -14,15 +14,14 @@
   <iframe id="page" class="hidden" title="Nuestro primer año"></iframe>
   <script>
     // CONFIGURACIÓN DE ACCESO: cambia estos dos valores cuando quieras.
-    const ACCESS = { username: 'Adriana', password: 'Parque Nuevo' };
+    const ACCESS = { username: 'Adriana', password: 'Parque Nuevo	
+' };
 
     // CARTA PERSONAL: edita solo el texto entre las comillas invertidas.
     const LETTER = {
       heading: 'Para ti, Adriana ❤️',
-      message: `ESCRIBE AQUÍ TU CARTA.
-
-Puedes añadir todos los párrafos que quieras.
-Cada salto de línea se verá en la carta.`,
+      message: `Holaaa Amor.
+Como ya sabras, hoy hacemos un año `,
       signature: `Te quiero muchísimo. ❤️
 David`
     };
@@ -31,6 +30,9 @@ David`
     const decode = value => new TextDecoder().decode(Uint8Array.from(atob(value), character => character.charCodeAt(0)));
     const loadPage = name => {
       let html = decode(PAGES[name] || PAGES.inicio);
+      if (name === 'nosotros') {
+        html = html.replace('📅 3 → 4 de septiembre de 2025', '📅 4 → 5 de septiembre de 2025');
+      }
       if (name === 'carta') {
         const letterPage = new DOMParser().parseFromString(html, 'text/html');
         letterPage.querySelector('.carta h2').textContent = LETTER.heading;
