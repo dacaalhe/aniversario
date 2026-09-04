@@ -31,6 +31,7 @@ David`
       let html = decode(PAGES[name] || PAGES.inicio);
       if (name === 'nosotros') {
         html = html.replace('📅 3 → 4 de septiembre de 2025', '📅 4 → 5 de septiembre de 2025');
+        html = html.replace('del 3 de Septiembre para el 4', 'del 4 de Septiembre para el 5');
       }
       if (name === 'carta') {
         const letterPage = new DOMParser().parseFromString(html, 'text/html');
