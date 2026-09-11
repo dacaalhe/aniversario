@@ -34,7 +34,20 @@ Bueno me hubiera gustado empezar esta carta resumiendo un poco como empezamos a 
         html = html.replace('📅 3 → 4 de septiembre de 2025', '📅 4 → 5 de septiembre de 2025');
         html = html.replace('del 3 de Septiembre para el 4', 'del 4 de Septiembre para el 5');
       }
-      if (name === 'carta') {
+      if (name === 'historia') {
+        const historyPage = new DOMParser().parseFromString(html, 'text/html');
+        const counterStyle = historyPage.createElement('style');
+        counterStyle.textContent = `.contador-aniversario{max-width:760px;margin:-10px auto 42px;padding:28px 24px;text-align:center;background:rgba(255,255,255,.88);border:1px solid #ffd1df;border-radius:25px;box-shadow:0 8px 25px rgba(180,60,100,.12)}.contador-aniversario h2{margin:0 0 10px;color:#d93668;font-size:1.45rem}.contador-aniversario p{margin:0 0 22px;color:#704052;line-height:1.5}.contador-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}.contador-item{padding:16px 8px;border-radius:16px;color:white;background:linear-gradient(135deg,#ffb6c9,#ff6f9f);box-shadow:0 5px 15px rgba(217,54,104,.18)}.contador-numero{display:block;font-size:1.7rem;font-weight:bold}.contador-etiqueta{display:block;margin-top:4px;font-size:.72rem;font-weight:bold;letter-spacing:.05em;text-transform:uppercase}@media(max-width:560px){.contador-aniversario{margin:0 15px 32px;padding:23px 14px}.contador-grid{grid-template-columns:repeat(3,1fr);gap:7px}.contador-item{padding:13px 4px}.contador-numero{font-size:1.35rem}.contador-etiqueta{font-size:.63rem}}`;
+        historyPage.head.append(counterStyle);
+        const counter = historyPage.createElement('section');
+        counter.className = 'contador-aniversario';
+        counter.innerHTML = '<h2>❤️ Nuestro tiempo juntos ❤️</h2><p>Desde el 11 de septiembre de 2025 a las 15:34</p><div class="contador-grid"><div class="contador-item"><span class="contador-numero" id="contador-anos">0</span><span class="contador-etiqueta">años</span></div><div class="contador-item"><span class="contador-numero" id="contador-meses">0</span><span class="contador-etiqueta">meses</span></div><div class="contador-item"><span class="contador-numero" id="contador-dias">0</span><span class="contador-etiqueta">días</span></div><div class="contador-item"><span class="contador-numero" id="contador-horas">0</span><span class="contador-etiqueta">horas</span></div><div class="contador-item"><span class="contador-numero" id="contador-minutos">0</span><span class="contador-etiqueta">minutos</span></div><div class="contador-item"><span class="contador-numero" id="contador-segundos">0</span><span class="contador-etiqueta">segundos</span></div></div>';
+        historyPage.querySelector('header').insertAdjacentElement('afterend', counter);
+        const counterScript = historyPage.createElement('script');
+        counterScript.textContent = 'const inicioContador=new Date(2025,8,11,15,34,0);function actualizarContador(){const ahora=new Date();let cursor=new Date(inicioContador);let anos=ahora.getFullYear()-cursor.getFullYear();cursor.setFullYear(cursor.getFullYear()+anos);if(cursor>ahora){anos--;cursor.setFullYear(cursor.getFullYear()-1)}let meses=0;while(meses<11){const proximo=new Date(cursor.getFullYear(),cursor.getMonth()+1,inicioContador.getDate(),inicioContador.getHours(),inicioContador.getMinutes(),inicioContador.getSeconds());if(proximo>ahora)break;cursor=proximo;meses++}let resto=ahora-cursor;const dia=86400000,hora=3600000,minuto=60000;const valores={anos:anos,meses:meses,dias:Math.floor(resto/dia),horas:Math.floor(resto%dia/hora),minutos:Math.floor(resto%hora/minuto),segundos:Math.floor(resto%minuto/1000)};Object.entries(valores).forEach(function([nombre,valor]){document.getElementById("contador-"+nombre).textContent=String(valor).padStart(2,"0")})}actualizarContador();setInterval(actualizarContador,1000);';
+        historyPage.body.append(counterScript);
+        html = '<!doctype html>' + historyPage.documentElement.outerHTML;
+      }      if (name === 'carta') {
         const letterPage = new DOMParser().parseFromString(html, 'text/html');
         letterPage.querySelector('.carta h2').textContent = LETTER.heading;
         const letterMessage = letterPage.querySelector('.texto-carta');
